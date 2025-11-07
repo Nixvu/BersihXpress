@@ -380,7 +380,8 @@
                             </div>
                         </div>
                         <p class="text-sm text-left text-gray-500 -my-2">atau masukkan data pelanggan baru ...</p>
-                        <div><label for="nama_pelanggan_manual" class="text-sm font-medium text-gray-600">Nama Pelanggan
+                        <div>
+                            <label for="nama_pelanggan_manual" class="text-sm font-medium text-gray-600">Nama Pelanggan
                                 Baru</label>
                             <div class="relative mt-1"><span
                                     class="absolute inset-y-0 left-0 pl-3 flex items-center pointer-events-none"><svg
@@ -525,94 +526,6 @@
         </div>
     </div>
 
-    <div id="modal-pengeluaran"
-        class="modal-popup hidden fixed bottom-0 left-0 right-0 bg-white rounded-t-[24px] shadow-2xl z-50 flex flex-col h-[90vh]">
-        <div class="flex-shrink-0">
-            <div class="w-full py-3">
-                <div class="w-12 h-1.5 bg-gray-300 rounded-full mx-auto"></div>
-            </div>
-            <div class="flex justify-between items-center px-6 pb-4">
-                <h2 class="text-xl font-bold text-gray-900">Catat Pengeluaran</h2><button
-                    class="btn-close-global p-1 text-gray-500 hover:text-gray-800"><svg data-feather="x"
-                        class="w-6 h-6"></svg></button>
-            </div>
-        </div>
-
-        <div class="flex-grow overflow-y-auto p-6 no-scrollbar">
-            <form id="form-pengeluaran" class="space-y-4">
-
-                <div><label for="nama_pengeluaran" class="text-sm font-medium text-gray-600">Nama
-                        Pengeluaran</label>
-                    <div class="relative mt-1"><span
-                            class="absolute inset-y-0 left-0 pl-3 flex items-center pointer-events-none"><svg
-                                data-feather="edit" class="h-5 w-5 text-gray-400"></svg></span><input type="text"
-                            id="nama_pengeluaran" class="w-full pl-10 pr-3 py-3 border border-gray-300 rounded-lg"
-                            placeholder="Contoh : Beli Deterjen"></div>
-                </div>
-
-                <div><label for="nominal_pengeluaran" class="text-sm font-medium text-gray-600">Nominal
-                        Pengeluaran</label>
-                    <div class="relative mt-1"><span
-                            class="absolute inset-y-0 left-0 pl-3 flex items-center pointer-events-none"><svg
-                                data-feather="dollar-sign" class="h-5 w-5 text-gray-400"></svg></span><input
-                            type="number" id="nominal_pengeluaran"
-                            class="w-full pl-10 pr-3 py-3 border border-gray-300 rounded-lg"
-                            placeholder="Contoh : 50000"></div>
-                </div>
-
-                <div>
-                    <label for="kategori_pengeluaran" class="text-sm font-medium text-gray-600">Kategori</label>
-                    <select id="kategori_pengeluaran"
-                        class="w-full mt-1 py-3 px-3 border border-gray-300 rounded-lg bg-white focus:outline-none focus:ring-2 focus:ring-blue-500">
-                        <option>-- Pilih Kategori --</option>
-                        <option>Bahan Baku (Deterjen, Parfum)</option>
-                        <option>Operasional (Listrik, Air)</option>
-                        <option>Lain-Lain</option>
-                    </select>
-                </div>
-
-                <div><label for="tanggal_pengeluaran" class="text-sm font-medium text-gray-600">Tanggal
-                        Pengeluaran</label>
-                    <input type="date" id="tanggal_pengeluaran"
-                        class="w-full mt-1 px-3 py-3 border border-gray-300 rounded-lg" value="">
-                </div>
-
-                <div>
-                    <label for="metode_bayar_pengeluaran" class="text-sm font-medium text-gray-600">Metode
-                        Pembayaran</label>
-                    <select id="metode_bayar_pengeluaran"
-                        class="w-full mt-1 py-3 px-3 border border-gray-300 rounded-lg bg-white focus:outline-none focus:ring-2 focus:ring-blue-500">
-                        <option>Tunai (Kas)</option>
-                        <option>Transfer Bank</option>
-                    </select>
-                </div>
-
-                <div><label for="keterangan_pengeluaran" class="text-sm font-medium text-gray-600">Keterangan
-                        (Opsional)</label>
-                    <textarea id="keterangan_pengeluaran" rows="3"
-                        class="w-full mt-1 px-3 py-3 border border-gray-300 rounded-lg"
-                        placeholder="Contoh: Deterjen bubuk 10kg"></textarea>
-                </div>
-
-                <div><label for="dibuat_oleh" class="text-sm font-medium text-gray-600">Dibuat Oleh</label>
-                    <div class="relative mt-1"><span
-                            class="absolute inset-y-0 left-0 pl-3 flex items-center pointer-events-none"><svg
-                                data-feather="user" class="h-5 w-5 text-gray-400"></svg></span><input type="text"
-                            id="dibuat_oleh"
-                            class="w-full pl-10 pr-3 py-3 border border-gray-300 rounded-lg bg-gray-100"
-                            value="Febriana (Owner)" readonly></div>
-                </div>
-            </form>
-        </div>
-
-        <div class="flex-shrink-0 p-6 bg-white border-t border-gray-200">
-            <button type="submit" form="form-pengeluaran"
-                class="w-full bg-blue-600 text-white font-bold py-3 px-4 rounded-lg hover:bg-blue-700">
-                Simpan Pengeluaran
-            </button>
-        </div>
-    </div>
-
     <div id="modal-transaksi-template"
         class="modal-popup hidden fixed bottom-0 left-0 right-0 bg-white rounded-t-[24px] shadow-2xl z-50 flex flex-col h-[90vh]">
         <div class="flex-shrink-0">
@@ -640,7 +553,9 @@
                                     class="w-full pl-10 pr-3 py-3 border border-gray-300 rounded-lg"
                                     placeholder="Cari pelanggan yang sudah ada..."></div>
                         </div>
-                        <div><label for="nama_pelanggan_template" class="text-sm font-medium text-gray-600">Atau Nama
+                        <p class="text-sm text-gray-600 -mt-2 mb-3">atau masukkan data pelanggan baru ...</p>
+                        <div><label for="nama_pelanggan_template" class="text-sm font-medium text-gray-600">Atau
+                                Nama
                                 Pelanggan Baru</label>
                             <div class="relative mt-1"><span
                                     class="absolute inset-y-0 left-0 pl-3 flex items-center pointer-events-none"><svg
@@ -649,7 +564,8 @@
                                     class="w-full pl-10 pr-3 py-3 border border-gray-300 rounded-lg"
                                     placeholder="Nama Pelanggan Baru"></div>
                         </div>
-                        <div><label for="no_handphone_template" class="text-sm font-medium text-gray-600">No Handphone
+                        <div><label for="no_handphone_template" class="text-sm font-medium text-gray-600">No
+                                Handphone
                                 (WA)</label>
                             <div class="relative mt-1"><span
                                     class="absolute inset-y-0 left-0 pl-3 flex items-center pointer-events-none"><svg
@@ -686,7 +602,8 @@
                 <section>
                     <h3 class="text-lg font-semibold text-gray-800 mb-3 pb-2 border-b">3. Pilih Layanan (Menu Cepat)
                     </h3>
-                    <p class="text-sm text-gray-600 -mt-2 mb-3">(Daftar layanan ini harusnya diambil secara dinamis dari
+                    <p class="text-sm text-gray-600 -mt-2 mb-3">(Daftar layanan ini harusnya diambil secara dinamis
+                        dari
                         menu "Kelola Layanan" Anda)</p>
 
                     <div class="space-y-2 mb-4" id="keranjang-layanan">
@@ -771,6 +688,93 @@
             <button type="submit" form="form-buat-template"
                 class="w-full bg-blue-600 text-white font-bold py-3 px-4 rounded-lg hover:bg-blue-700">
                 Buat Transaksi
+            </button>
+        </div>
+    </div>
+
+    <div id="modal-pengeluaran"
+        class="modal-popup hidden fixed bottom-0 left-0 right-0 bg-white rounded-t-[24px] shadow-2xl z-50 flex flex-col h-[90vh]">
+        <div class="flex-shrink-0">
+            <div class="w-full py-3">
+                <div class="w-12 h-1.5 bg-gray-300 rounded-full mx-auto"></div>
+            </div>
+            <div class="flex justify-between items-center px-6 pb-4">
+                <h2 class="text-xl font-bold text-gray-900">Catat Pengeluaran</h2><button
+                    class="btn-close-global p-1 text-gray-500 hover:text-gray-800"><svg data-feather="x"
+                        class="w-6 h-6"></svg></button>
+            </div>
+        </div>
+        <div class="flex-grow overflow-y-auto p-6 no-scrollbar">
+            <form id="form-pengeluaran" class="space-y-4">
+
+                <div><label for="nama_pengeluaran" class="text-sm font-medium text-gray-600">Nama
+                        Pengeluaran</label>
+                    <div class="relative mt-1"><span
+                            class="absolute inset-y-0 left-0 pl-3 flex items-center pointer-events-none"><svg
+                                data-feather="edit" class="h-5 w-5 text-gray-400"></svg></span><input type="text"
+                            id="nama_pengeluaran" class="w-full pl-10 pr-3 py-3 border border-gray-300 rounded-lg"
+                            placeholder="Contoh : Beli Deterjen"></div>
+                </div>
+
+                <div><label for="nominal_pengeluaran" class="text-sm font-medium text-gray-600">Nominal
+                        Pengeluaran</label>
+                    <div class="relative mt-1"><span
+                            class="absolute inset-y-0 left-0 pl-3 flex items-center pointer-events-none"><svg
+                                data-feather="dollar-sign" class="h-5 w-5 text-gray-400"></svg></span><input
+                            type="number" id="nominal_pengeluaran"
+                            class="w-full pl-10 pr-3 py-3 border border-gray-300 rounded-lg"
+                            placeholder="Contoh : 50000"></div>
+                </div>
+
+                <div>
+                    <label for="kategori_pengeluaran" class="text-sm font-medium text-gray-600">Kategori</label>
+                    <select id="kategori_pengeluaran"
+                        class="w-full mt-1 py-3 px-3 border border-gray-300 rounded-lg bg-white focus:outline-none focus:ring-2 focus:ring-blue-500">
+                        <option>-- Pilih Kategori --</option>
+                        <option>Bahan Baku (Deterjen, Parfum)</option>
+                        <option>Operasional (Listrik, Air)</option>
+                        <option>Lain-Lain</option>
+                    </select>
+                </div>
+
+                <div><label for="tanggal_pengeluaran" class="text-sm font-medium text-gray-600">Tanggal
+                        Pengeluaran</label>
+                    <input type="date" id="tanggal_pengeluaran"
+                        class="w-full mt-1 px-3 py-3 border border-gray-300 rounded-lg" value="">
+                </div>
+
+                <div>
+                    <label for="metode_bayar_pengeluaran" class="text-sm font-medium text-gray-600">Metode
+                        Pembayaran</label>
+                    <select id="metode_bayar_pengeluaran"
+                        class="w-full mt-1 py-3 px-3 border border-gray-300 rounded-lg bg-white focus:outline-none focus:ring-2 focus:ring-blue-500">
+                        <option>Tunai (Kas)</option>
+                        <option>Transfer Bank</option>
+                    </select>
+                </div>
+
+                <div><label for="keterangan_pengeluaran" class="text-sm font-medium text-gray-600">Keterangan
+                        (Opsional)</label>
+                    <textarea id="keterangan_pengeluaran" rows="3"
+                        class="w-full mt-1 px-3 py-3 border border-gray-300 rounded-lg"
+                        placeholder="Contoh: Deterjen bubuk 10kg"></textarea>
+                </div>
+
+                <div><label for="dibuat_oleh" class="text-sm font-medium text-gray-600">Dibuat Oleh</label>
+                    <div class="relative mt-1"><span
+                            class="absolute inset-y-0 left-0 pl-3 flex items-center pointer-events-none"><svg
+                                data-feather="user" class="h-5 w-5 text-gray-400"></svg></span><input type="text"
+                            id="dibuat_oleh"
+                            class="w-full pl-10 pr-3 py-3 border border-gray-300 rounded-lg bg-gray-100"
+                            value="Febriana (Owner)" readonly></div>
+                </div>
+            </form>
+        </div>
+
+        <div class="flex-shrink-0 p-6 bg-white border-t border-gray-200">
+            <button type="submit" form="form-pengeluaran"
+                class="w-full bg-blue-600 text-white font-bold py-3 px-4 rounded-lg hover:bg-blue-700">
+                Simpan Pengeluaran
             </button>
         </div>
     </div>

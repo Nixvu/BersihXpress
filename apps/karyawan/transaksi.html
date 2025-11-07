@@ -7,7 +7,7 @@
     <title>Riwayat Transaksi - BersihXpress</title>
 
     <link rel="stylesheet" href="../../assets/css/style.css">
-        <link rel="stylesheet" href="../../assets/css/webview.css">
+    <link rel="stylesheet" href="../../assets/css/webview.css">
     <script src="../../assets/js/webview.js"></script>
     <script src="../../assets/js/tailwind.js"></script>
     <script>
@@ -355,45 +355,78 @@
                         class="w-6 h-6"></svg></button>
             </div>
         </div>
-
         <div class="flex-grow overflow-y-auto p-6 no-scrollbar">
             <form id="form-buat-transaksi" class="space-y-6">
 
                 <section>
-                    <h3 class="text-lg font-semibold text-gray-800 mb-3 pb-2 border-b">Informasi Pelanggan</h3>
+                    <h3 class="text-lg font-semibold text-gray-800 mb-3 pb-2 border-b">1. Informasi Pelanggan</h3>
                     <div class="space-y-4">
-                        <div><label for="cari_pelanggan" class="text-sm font-medium text-gray-600">Cari Pelanggan
+                        <div><label for="cari_pelanggan_manual" class="text-sm font-medium text-gray-600">Cari Pelanggan
                                 (Nama / No HP)</label>
                             <div class="relative mt-1"><span
                                     class="absolute inset-y-0 left-0 pl-3 flex items-center pointer-events-none"><svg
                                         data-feather="search" class="h-5 w-5 text-gray-400"></svg></span><input
-                                    type="text" id="cari_pelanggan"
+                                    type="text" id="cari_pelanggan_manual"
                                     class="w-full pl-10 pr-3 py-3 border border-gray-300 rounded-lg"
-                                    placeholder="Cari pelanggan yang sudah ada..."></div>
+                                    placeholder="Cari pelanggan yang sudah ada...">
+                            </div>
                         </div>
-                        <div><label for="nama_pelanggan" class="text-sm font-medium text-gray-600">Nama
-                                Pelanggan</label>
+                        <p class="text-sm text-left text-gray-500 -my-2">atau masukkan data pelanggan baru ...</p>
+                        <div>
+                            <label for="nama_pelanggan_manual" class="text-sm font-medium text-gray-600">Nama Pelanggan
+                                Baru</label>
                             <div class="relative mt-1"><span
                                     class="absolute inset-y-0 left-0 pl-3 flex items-center pointer-events-none"><svg
                                         data-feather="user" class="h-5 w-5 text-gray-400"></svg></span><input
-                                    type="text" id="nama_pelanggan"
+                                    type="text" id="nama_pelanggan_manual"
                                     class="w-full pl-10 pr-3 py-3 border border-gray-300 rounded-lg"
                                     placeholder="Nama Pelanggan Baru"></div>
                         </div>
-                        <div><label for="no_handphone" class="text-sm font-medium text-gray-600">No
-                                Handphone</label>
+                        <div><label for="no_handphone_manual" class="text-sm font-medium text-gray-600">No Handphone
+                                (WA)</label>
                             <div class="relative mt-1"><span
                                     class="absolute inset-y-0 left-0 pl-3 flex items-center pointer-events-none"><svg
                                         data-feather="phone" class="h-5 w-5 text-gray-400"></svg></span><input
-                                    type="tel" id="no_handphone"
+                                    type="tel" id="no_handphone_manual"
                                     class="w-full pl-10 pr-3 py-3 border border-gray-300 rounded-lg"
                                     placeholder="No Handphone Pelanggan"></div>
+                        </div>
+                        <div><label for="alamat_manual" class="text-sm font-medium text-gray-600">Alamat
+                                (Opsional)</label>
+                            <div class="relative mt-1"><span
+                                    class="absolute inset-y-0 left-0 top-3 pl-3 flex items-start pointer-events-none"><svg
+                                        data-feather="map-pin" class="h-5 w-5 text-gray-400"></svg></span><textarea
+                                    id="alamat_manual" rows="2"
+                                    class="w-full pl-10 pr-3 py-3 border border-gray-300 rounded-lg"
+                                    placeholder="Alamat untuk data / pengantaran"></textarea></div>
                         </div>
                     </div>
                 </section>
 
                 <section>
-                    <h3 class="text-lg font-semibold text-gray-800 mb-3 pb-2 border-b">Rincian Layanan</h3>
+                    <h3 class="text-lg font-semibold text-gray-800 mb-3 pb-2 border-b">2. Informasi Pesanan</h3>
+                    <div class="space-y-4">
+                        <div>
+                            <label for="tgl_selesai_manual" class="text-sm font-medium text-gray-600">Estimasi
+                                Selesai</label>
+                            <input type="datetime-local" id="tgl_selesai_manual"
+                                class="w-full mt-1 px-3 py-3 border border-gray-300 rounded-lg">
+                        </div>
+
+                        <div>
+                            <label for="status_awal_manual" class="text-sm font-medium text-gray-600">Status
+                                Awal</label>
+                            <select id="status_awal_manual"
+                                class="w-full mt-1 py-3 px-3 border border-gray-300 rounded-lg bg-white focus:outline-none focus:ring-2 focus:ring-blue-500">
+                                <option value="Antrian" selected>Antrian (Diterima)</option>
+                                <option value="Diproses">Langsung Diproses</option>
+                            </select>
+                        </div>
+                    </div>
+                </section>
+
+                <section>
+                    <h3 class="text-lg font-semibold text-gray-800 mb-3 pb-2 border-b">3. Rincian Layanan</h3>
                     <div class="border-b pb-3 mb-3">
                         <div class="flex justify-between items-center mb-2">
                             <label class="text-sm font-medium text-gray-600">Layanan 1</label>
@@ -403,16 +436,17 @@
                         </div>
                         <select
                             class="w-full py-3 px-3 border border-gray-300 rounded-lg bg-white mb-2 focus:outline-none focus:ring-2 focus:ring-blue-500">
-                            <option>-- Pilih Layanan --</option>
-                            <option selected>Kiloan Reguler (Rp 7.000)</option>
-                            <option>Satuan - Kemeja (Rp 10.000)</option>
-                            <option>Bed Cover (Rp 25.000)</option>
+                            <option>-- Pilih Layanan (dari Kelola Layanan) --</option>
+                            <option value="7000" selected>Kiloan Reguler (Rp 7.000/kg)</option>
+                            <option value="10000">Kiloan Ekspres (Rp 10.000/kg)</option>
+                            <option value="15000">Satuan - Jas (Rp 15.000/pcs)</option>
+                            <option value="25000">Satuan - Bed Cover (Rp 25.000/pcs)</option>
                         </select>
                         <div class="grid grid-cols-2 gap-2">
-                            <input type="number" placeholder="Qty"
-                                class="w-full px-3 py-3 border border-gray-300 rounded-lg" value="3">
+                            <input type="number" placeholder="Qty (Kg / Pcs)"
+                                class="w-full px-3 py-3 border border-gray-300 rounded-lg" value="1">
                             <input type="text" placeholder="Harga Total"
-                                class="w-full px-3 py-3 border border-gray-300 rounded-lg bg-gray-100" value="Rp 21.000"
+                                class="w-full px-3 py-3 border border-gray-300 rounded-lg bg-gray-100" value="Rp 7.000"
                                 readonly>
                         </div>
                     </div>
@@ -422,23 +456,22 @@
                     </button>
                     <div>
                         <div class="border-t pt-4"></div>
-                        <label for="tambah_catatan" class="text-sm font-medium text-gray-600">Catatan
-                            (Opsional)</label>
+                        <label for="catatan_manual" class="text-sm font-medium text-gray-600">Catatan (Opsional)</label>
                         <div class="relative mt-1"><span
                                 class="absolute inset-y-0 left-0 top-3 pl-3 flex items-start pointer-events-none"><svg
                                     data-feather="clipboard" class="h-5 w-5 text-gray-400"></svg></span><textarea
-                                id="tambah_catatan" rows="2"
+                                id="catatan_manual" rows="2"
                                 class="w-full pl-10 pr-3 py-3 border border-gray-300 rounded-lg"
                                 placeholder="Misal: Alergi parfum, minta lipat rapi..."></textarea></div>
                     </div>
                 </section>
 
                 <section>
-                    <h3 class="text-lg font-semibold text-gray-800 mb-3 pb-2 border-b">Rincian Pembayaran</h3>
+                    <h3 class="text-lg font-semibold text-gray-800 mb-3 pb-2 border-b">4. Rincian Pembayaran</h3>
                     <div class="space-y-4">
                         <div><label class="text-sm font-medium text-gray-600">Subtotal</label><input type="text"
                                 class="w-full mt-1 px-3 py-3 border border-gray-300 rounded-lg bg-gray-100"
-                                value="Rp 21.000" readonly></div>
+                                value="Rp 7.000" readonly></div>
                         <div><label for="diskon" class="text-sm font-medium text-gray-600">Diskon (Rp)</label><input
                                 type="number" id="diskon"
                                 class="w-full mt-1 px-3 py-3 border border-gray-300 rounded-lg"
@@ -446,31 +479,194 @@
                         <div><label for="biaya_antar" class="text-sm font-medium text-gray-600">Biaya Antar
                                 (Rp)</label><input type="number" id="biaya_antar"
                                 class="w-full mt-1 px-3 py-3 border border-gray-300 rounded-lg" value="0"></div>
-
                         <div class="border-t pt-4">
                             <div class="flex justify-between items-center">
                                 <span class="text-lg font-bold text-gray-900">Total Akhir</span>
-                                <span class="text-2xl font-bold text-blue-600">Rp 20.000</span>
+                                <span class="text-2xl font-bold text-blue-600">Rp 6.000</span>
                             </div>
                         </div>
-
                         <div class="grid grid-cols-2 gap-3">
                             <div>
-                                <label for="metode_bayar" class="text-sm font-medium text-gray-600">Metode
+                                <label for="metode_bayar_manual" class="text-sm font-medium text-gray-600">Metode
                                     Bayar</label>
-                                <select id="metode_bayar"
+                                <select id="metode_bayar_manual"
                                     class="w-full mt-1 py-3 px-3 border border-gray-300 rounded-lg bg-white focus:outline-none focus:ring-2 focus:ring-blue-500">
-                                    <option>Tunai</option>
-                                    <option>Non-Tunai (Transfer)</option>
+                                    <option value="Tunai">Tunai</option>
+                                    <option value="QRIS">QRIS</option>
+                                    <option value="Transfer">Transfer</option>
                                 </select>
                             </div>
                             <div>
-                                <label for="status_bayar" class="text-sm font-medium text-gray-600">Status
+                                <label for="status_bayar_manual" class="text-sm font-medium text-gray-600">Status
                                     Bayar</label>
-                                <select id="status_bayar"
+                                <select id="status_bayar_manual"
                                     class="w-full mt-1 py-3 px-3 border border-gray-300 rounded-lg bg-white focus:outline-none focus:ring-2 focus:ring-blue-500">
-                                    <option>Belum Lunas</option>
-                                    <option>Lunas</option>
+                                    <option value="Belum Lunas" selected>Belum Lunas</option>
+                                    <option value="Lunas">Lunas</option>
+                                </select>
+                            </div>
+                        </div>
+                    </div>
+                </section>
+            </form>
+        </div>
+        <div class="flex-shrink-0 p-6 bg-white border-t border-gray-200">
+            <button type="submit" form="form-buat-transaksi"
+                class="w-full bg-blue-600 text-white font-bold py-3 px-4 rounded-lg hover:bg-blue-700">
+                Buat Transaksi
+            </button>
+        </div>
+    </div>
+
+    <div id="modal-transaksi-template"
+        class="modal-popup hidden fixed bottom-0 left-0 right-0 bg-white rounded-t-[24px] shadow-2xl z-50 flex flex-col h-[90vh]">
+        <div class="flex-shrink-0">
+            <div class="w-full py-3">
+                <div class="w-12 h-1.5 bg-gray-300 rounded-full mx-auto"></div>
+            </div>
+            <div class="flex justify-between items-center px-6 pb-4">
+                <h2 class="text-xl font-bold text-gray-900">Buat Transaksi Cepat (POS)</h2>
+                <button class="btn-close-global p-1 text-gray-500 hover:text-gray-800"><svg data-feather="x"
+                        class="w-6 h-6"></svg></button>
+            </div>
+        </div>
+        <div class="flex-grow overflow-y-auto p-6 no-scrollbar">
+            <form id="form-buat-template" class="space-y-6">
+
+                <section>
+                    <h3 class="text-lg font-semibold text-gray-800 mb-3 pb-2 border-b">1. Informasi Pelanggan</h3>
+                    <div class="space-y-4">
+                        <div><label for="cari_pelanggan_template" class="text-sm font-medium text-gray-600">Cari
+                                Pelanggan (Nama / No HP)</label>
+                            <div class="relative mt-1"><span
+                                    class="absolute inset-y-0 left-0 pl-3 flex items-center pointer-events-none"><svg
+                                        data-feather="search" class="h-5 w-5 text-gray-400"></svg></span><input
+                                    type="text" id="cari_pelanggan_template"
+                                    class="w-full pl-10 pr-3 py-3 border border-gray-300 rounded-lg"
+                                    placeholder="Cari pelanggan yang sudah ada..."></div>
+                        </div>
+                        <p class="text-sm text-gray-600 -mt-2 mb-3">atau masukkan data pelanggan baru ...</p>
+                        <div><label for="nama_pelanggan_template" class="text-sm font-medium text-gray-600">Atau
+                                Nama
+                                Pelanggan Baru</label>
+                            <div class="relative mt-1"><span
+                                    class="absolute inset-y-0 left-0 pl-3 flex items-center pointer-events-none"><svg
+                                        data-feather="user" class="h-5 w-5 text-gray-400"></svg></span><input
+                                    type="text" id="nama_pelanggan_template"
+                                    class="w-full pl-10 pr-3 py-3 border border-gray-300 rounded-lg"
+                                    placeholder="Nama Pelanggan Baru"></div>
+                        </div>
+                        <div><label for="no_handphone_template" class="text-sm font-medium text-gray-600">No
+                                Handphone
+                                (WA)</label>
+                            <div class="relative mt-1"><span
+                                    class="absolute inset-y-0 left-0 pl-3 flex items-center pointer-events-none"><svg
+                                        data-feather="phone" class="h-5 w-5 text-gray-400"></svg></span><input
+                                    type="tel" id="no_handphone_template"
+                                    class="w-full pl-10 pr-3 py-3 border border-gray-300 rounded-lg"
+                                    placeholder="No Handphone Pelanggan"></div>
+                        </div>
+                    </div>
+                </section>
+
+                <section>
+                    <h3 class="text-lg font-semibold text-gray-800 mb-3 pb-2 border-b">2. Informasi Pesanan</h3>
+                    <div class="space-y-4">
+                        <div>
+                            <label for="tgl_selesai_template" class="text-sm font-medium text-gray-600">Estimasi
+                                Selesai</label>
+                            <input type="datetime-local" id="tgl_selesai_template"
+                                class="w-full mt-1 px-3 py-3 border border-gray-300 rounded-lg">
+                        </div>
+
+                        <div>
+                            <label for="status_awal_template" class="text-sm font-medium text-gray-600">Status
+                                Awal</label>
+                            <select id="status_awal_template"
+                                class="w-full mt-1 py-3 px-3 border border-gray-300 rounded-lg bg-white focus:outline-none focus:ring-2 focus:ring-blue-500">
+                                <option value="Antrian" selected>Antrian (Diterima)</option>
+                                <option value="Diproses">Langsung Diproses</option>
+                            </select>
+                        </div>
+                    </div>
+                </section>
+
+                <section>
+                    <h3 class="text-lg font-semibold text-gray-800 mb-3 pb-2 border-b">3. Pilih Layanan (Menu Cepat)
+                    </h3>
+                    <p class="text-sm text-gray-600 -mt-2 mb-3">(Daftar layanan ini harusnya diambil secara dinamis
+                        dari
+                        menu "Kelola Layanan" Anda)</p>
+
+                    <div class="space-y-2 mb-4" id="keranjang-layanan">
+                    </div>
+
+                    <div class="grid grid-cols-2 gap-3" id="daftar-layanan-dinamis">
+                        <button type="button"
+                            class="text-left bg-white border border-gray-300 rounded-lg p-3 hover:border-blue-500 hover:bg-blue-50"
+                            data-nama="Kiloan Reguler" data-harga="7000" data-unit="kg">
+                            <p class="font-semibold">Kiloan Reguler</p>
+                            <p class="text-sm text-gray-600">Rp 7.000 / kg</p>
+                        </button>
+                        <button type="button"
+                            class="text-left bg-white border border-gray-300 rounded-lg p-3 hover:border-blue-500 hover:bg-blue-50"
+                            data-nama="Kemeja Satuan" data-harga="15000" data-unit="pcs">
+                            <p class="font-semibold">Kemeja Satuan</p>
+                            <p class="text-sm text-gray-600">Rp 15.000 / pcs</p>
+                        </button>
+                        <button type="button"
+                            class="text-left bg-white border border-gray-300 rounded-lg p-3 hover:border-blue-500 hover:bg-blue-50"
+                            data-nama="Cuci Karpet" data-harga="15000" data-unit="m²">
+                            <p class="font-semibold">Cuci Karpet</p>
+                            <p class="text-sm text-gray-600">Rp 15.000 / m²</p>
+                        </button>
+                        <button type="button"
+                            class="text-left bg-white border border-gray-300 rounded-lg p-3 hover:border-blue-500 hover:bg-blue-50"
+                            data-nama="Bed Cover" data-harga="25000" data-unit="pcs">
+                            <p class="font-semibold">Bed Cover</p>
+                            <p class="text-sm text-gray-600">Rp 25.000 / pcs</p>
+                        </button>
+                    </div>
+
+                    <div>
+                        <div class="border-t pt-4"></div>
+                        <label for="catatan_template" class="text-sm font-medium text-gray-600">Catatan
+                            (Opsional)</label>
+                        <div class="relative mt-1"><span
+                                class="absolute inset-y-0 left-0 top-3 pl-3 flex items-start pointer-events-none"><svg
+                                    data-feather="clipboard" class="h-5 w-5 text-gray-400"></svg></span><textarea
+                                id="catatan_template" rows="2"
+                                class="w-full pl-10 pr-3 py-3 border border-gray-300 rounded-lg"
+                                placeholder="Misal: Alergi parfum, minta lipat rapi..."></textarea></div>
+                    </div>
+                </section>
+                <section>
+                    <h3 class="text-lg font-semibold text-gray-800 mb-3 pb-2 border-b">4. Rincian Pembayaran</h3>
+                    <div class="space-y-4">
+                        <div>
+                            <div class="flex justify-between items-center">
+                                <span class="text-lg font-bold text-gray-900">Total Akhir</span>
+                                <span class="text-2xl font-bold text-blue-600" id="template-total-akhir">Rp 0</span>
+                            </div>
+                        </div>
+                        <div class="grid grid-cols-2 gap-3">
+                            <div>
+                                <label for="metode_bayar_template" class="text-sm font-medium text-gray-600">Metode
+                                    Bayar</label>
+                                <select id="metode_bayar_template"
+                                    class="w-full mt-1 py-3 px-3 border border-gray-300 rounded-lg bg-white focus:outline-none focus:ring-2 focus:ring-blue-500">
+                                    <option value="Tunai">Tunai</option>
+                                    <option value="QRIS">QRIS</option>
+                                    <option value="Transfer">Transfer</option>
+                                </select>
+                            </div>
+                            <div>
+                                <label for="status_bayar_template" class="text-sm font-medium text-gray-600">Status
+                                    Bayar</label>
+                                <select id="status_bayar_template"
+                                    class="w-full mt-1 py-3 px-3 border border-gray-300 rounded-lg bg-white focus:outline-none focus:ring-2 focus:ring-blue-500">
+                                    <option value="Belum Lunas" selected>Belum Lunas</option>
+                                    <option value="Lunas">Lunas</option>
                                 </select>
                             </div>
                         </div>
@@ -481,7 +677,7 @@
         </div>
 
         <div class="flex-shrink-0 p-6 bg-white border-t border-gray-200">
-            <button type="submit" form="form-buat-transaksi"
+            <button type="submit" form="form-buat-template"
                 class="w-full bg-blue-600 text-white font-bold py-3 px-4 rounded-lg hover:bg-blue-700">
                 Buat Transaksi
             </button>
@@ -500,7 +696,6 @@
                         class="w-6 h-6"></svg></button>
             </div>
         </div>
-
         <div class="flex-grow overflow-y-auto p-6 no-scrollbar">
             <form id="form-pengeluaran" class="space-y-4">
 
@@ -563,7 +758,7 @@
                                 data-feather="user" class="h-5 w-5 text-gray-400"></svg></span><input type="text"
                             id="dibuat_oleh"
                             class="w-full pl-10 pr-3 py-3 border border-gray-300 rounded-lg bg-gray-100"
-                            value="John Doe (Karyawan)" readonly></div>
+                            value="Febriana (Owner)" readonly></div>
                 </div>
             </form>
         </div>
@@ -576,153 +771,9 @@
         </div>
     </div>
 
-    <div id="modal-transaksi-template"
-        class="modal-popup hidden fixed bottom-0 left-0 right-0 bg-white rounded-t-[24px] shadow-2xl z-50 flex flex-col h-[90vh]">
-        <div class="flex-shrink-0">
-            <div class="w-full py-3">
-                <div class="w-12 h-1.5 bg-gray-300 rounded-full mx-auto"></div>
-            </div>
-            <div class="flex justify-between items-center px-6 pb-4">
-                <h2 class="text-xl font-bold text-gray-900">Buat Transaksi Template</h2>
-                <button class="btn-close-global p-1 text-gray-500 hover:text-gray-800"><svg data-feather="x"
-                        class="w-6 h-6"></svg></button>
-            </div>
-        </div>
-
-        <div class="flex-grow overflow-y-auto p-6 no-scrollbar">
-            <form id="form-buat-template" class="space-y-6">
-
-                <section>
-                    <h3 class="text-lg font-semibold text-gray-800 mb-3 pb-2 border-b">Informasi Pelanggan</h3>
-                    <div class="space-y-4">
-                        <div><label for="cari_pelanggan" class="text-sm font-medium text-gray-600">Cari Pelanggan
-                                (Nama / No HP)</label>
-                            <div class="relative mt-1"><span
-                                    class="absolute inset-y-0 left-0 pl-3 flex items-center pointer-events-none"><svg
-                                        data-feather="search" class="h-5 w-5 text-gray-400"></svg></span><input
-                                    type="text" id="cari_pelanggan"
-                                    class="w-full pl-10 pr-3 py-3 border border-gray-300 rounded-lg"
-                                    placeholder="Cari pelanggan yang sudah ada..."></div>
-                        </div>
-                        <div><label for="nama_pelanggan" class="text-sm font-medium text-gray-600">Nama
-                                Pelanggan</label>
-                            <div class="relative mt-1"><span
-                                    class="absolute inset-y-0 left-0 pl-3 flex items-center pointer-events-none"><svg
-                                        data-feather="user" class="h-5 w-5 text-gray-400"></svg></span><input
-                                    type="text" id="nama_pelanggan"
-                                    class="w-full pl-10 pr-3 py-3 border border-gray-300 rounded-lg"
-                                    placeholder="Nama Pelanggan Baru"></div>
-                        </div>
-                        <div><label for="no_handphone" class="text-sm font-medium text-gray-600">No
-                                Handphone</label>
-                            <div class="relative mt-1"><span
-                                    class="absolute inset-y-0 left-0 pl-3 flex items-center pointer-events-none"><svg
-                                        data-feather="phone" class="h-5 w-5 text-gray-400"></svg></span><input
-                                    type="tel" id="no_handphone"
-                                    class="w-full pl-10 pr-3 py-3 border border-gray-300 rounded-lg"
-                                    placeholder="No Handphone Pelanggan"></div>
-                        </div>
-                    </div>
-                </section>
-
-                <section>
-                    <h3 class="text-lg font-semibold text-gray-800 mb-3 pb-2 border-b">Pilih Layanan (Menu Cepat)
-                    </h3>
-                    <div class="space-y-2 mb-4">
-                        <div class="flex justify-between items-center bg-gray-100 p-3 rounded-lg">
-                            <div>
-                                <p class="font-semibold">Kemeja Satuan</p>
-                                <p class="text-sm text-gray-600">1 Pcs x Rp 10.000</p>
-                            </div>
-                            <div class="flex items-center space-x-2">
-                                <span class="font-semibold">Rp 10.000</span>
-                                <button type="button" class="text-red-500 hover:text-red-700">
-                                    <svg data-feather="trash-2" class="w-4 h-4"></svg>
-                                </button>
-                            </div>
-                        </div>
-                    </div>
-
-                    <div class="grid grid-cols-2 gap-3">
-                        <button type="button"
-                            class="text-left bg-white border border-gray-300 rounded-lg p-3 hover:border-blue-500 hover:bg-blue-50">
-                            <p class="font-semibold">Kemeja Satuan</p>
-                            <p class="text-sm text-gray-600">Rp 10.000</p>
-                        </button>
-                        <button type="button"
-                            class="text-left bg-white border border-gray-300 rounded-lg p-3 hover:border-blue-500 hover:bg-blue-50">
-                            <p class="font-semibold">Bed Cover King</p>
-                            <p class="text-sm text-gray-600">Rp 25.000</p>
-                        </button>
-                        <button type="button"
-                            class="text-left bg-white border border-gray-300 rounded-lg p-3 hover:border-blue-500 hover:bg-blue-50">
-                            <p class="font-semibold">Setelan Jas</p>
-                            <p class="text-sm text-gray-600">Rp 35.000</p>
-                        </button>
-                        <button type="button"
-                            class="text-left bg-white border border-gray-300 rounded-lg p-3 hover:border-blue-500 hover:bg-blue-50">
-                            <p class="font-semibold">Cuci Karpet</p>
-                            <p class="text-sm text-gray-600">Rp 50.000</p>
-                        </button>
-                    </div>
-                    <div>
-                        <div class="border-t pt-4"></div>
-                        <label for="tambah_catatan" class="text-sm font-medium text-gray-600">Catatan
-                            (Opsional)</label>
-                        <div class="relative mt-1"><span
-                                class="absolute inset-y-0 left-0 top-3 pl-3 flex items-start pointer-events-none"><svg
-                                    data-feather="clipboard" class="h-5 w-5 text-gray-400"></svg></span><textarea
-                                id="tambah_catatan" rows="2"
-                                class="w-full pl-10 pr-3 py-3 border border-gray-300 rounded-lg"
-                                placeholder="Misal: Alergi parfum, minta lipat rapi..."></textarea></div>
-                    </div>
-                </section>
-
-                <section>
-                    <h3 class="text-lg font-semibold text-gray-800 mb-3 pb-2 border-b">Rincian Pembayaran</h3>
-                    <div class="space-y-4">
-                        <div>
-                            <div class="flex justify-between items-center">
-                                <span class="text-lg font-bold text-gray-900">Total Akhir</span>
-                                <span class="text-2xl font-bold text-blue-600">Rp 10.000</span>
-                            </div>
-                        </div>
-                        <div class="grid grid-cols-2 gap-3">
-                            <div>
-                                <label for="metode_bayar_template" class="text-sm font-medium text-gray-600">Metode
-                                    Bayar</label>
-                                <select id="metode_bayar_template"
-                                    class="w-full mt-1 py-3 px-3 border border-gray-300 rounded-lg bg-white focus:outline-none focus:ring-2 focus:ring-blue-500">
-                                    <option>Tunai</option>
-                                    <option>Non-Tunai (Transfer)</option>
-                                </select>
-                            </div>
-                            <div>
-                                <label for="status_bayar_template" class="text-sm font-medium text-gray-600">Status
-                                    Bayar</label>
-                                <select id="status_bayar_template"
-                                    class="w-full mt-1 py-3 px-3 border border-gray-300 rounded-lg bg-white focus:outline-none focus:ring-2 focus:ring-blue-500">
-                                    <option>Belum Lunas</option>
-                                    <option>Lunas</option>
-                                </select>
-                            </div>
-                        </div>
-                    </div>
-                </section>
-
-            </form>
-        </div>
-
-        <div class="flex-shrink-0 p-6 bg-white border-t border-gray-200">
-            <button type="submit" form="form-buat-template"
-                class="w-full bg-blue-600 text-white font-bold py-3 px-4 rounded-lg hover:bg-blue-700">
-                Buat Transaksi
-            </button>
-        </div>
-
-        <script src="../../assets/js/icons.js" defer></script>
-        <script src="../../assets/js/main.js" defer></script>
-        <script src="../../assets/js/karyawan-transaksi.js" defer></script>
+    <script src="../../assets/js/icons.js" defer></script>
+    <script src="../../assets/js/main.js" defer></script>
+    <script src="../../assets/js/karyawan-transaksi.js" defer></script>
 
 </body>
 
