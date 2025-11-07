@@ -1,0 +1,58 @@
+<!DOCTYPE html>
+<html lang="id">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Akun Berhasil Dibuat - BersihXpress</title>
+
+    <link rel="stylesheet" href="../assets/css/style.css">
+    <link rel="stylesheet" href="../assets/css/webview.css">
+    <script src="../assets/js/webview.js"></script>
+    <script src="../assets/js/tailwind.js"></script>
+</head>
+
+<body class="bg-white">
+    <div id="loading-overlay" class="loading-container">
+        <img src="../assets/images/loading.gif" alt="Memuat..." class="loading-indicator">
+    </div>
+
+    <div class="relative min-h-screen flex flex-col">
+
+        <div
+            class="relative bg-blue-600 h-80 w-full rounded-b-[40px] flex flex-col items-center justify-center text-white p-6 overflow-hidden flex-shrink-0">
+
+            <div class="absolute -top-10 -left-10 w-32 h-32 bg-white/10 rounded-full z-0 opacity-50"></div>
+            <div class="absolute top-5 right-20 w-8 h-8 bg-white/10 rounded-full z-0 opacity-50"></div>
+            <div class="absolute bottom-5 -right-5 w-16 h-16 bg-white/10 rounded-full z-0 opacity-50"></div>
+
+            <div class="z-10">
+                <img src="../assets/images/illustrations/Berhasil.svg" alt="Ilustrasi Akun Berhasil Dibuat"
+                    class="w-auto h-48">
+            </div>
+
+        </div>
+
+        <div class="p-6 mt-8 flex-grow flex flex-col">
+
+            <div class="text-center">
+                <h1 class="text-3xl font-bold text-gray-900">Kata Sandi Anda Telah Berhasil Diubah</h1>
+
+                <p class="text-gray-500 mt-2 mb-6">Kata sandi anda telah dirubah pastikan selalu menginggat kata sandi anda dan rutin untuk meperbharuinya untuk mencegah peretasan</p>
+            </div>
+
+            <div class="mt-auto"> <button type="button" onclick="window.location.href='masuk.html'"
+                    class="w-full bg-blue-600 text-white font-bold py-3 px-4 rounded-lg hover:bg-blue-700 focus:outline-none focus:ring-2 focus:ring-blue-500 focus:ring-opacity-50 transition duration-300 mt-4 mb-6">
+                    Selanjutnya
+                </button>
+            </div>
+
+        </div>
+    </div>
+
+    <script src="../assets/js/icons.js"></script>
+    <script src="../assets/js/main.js"></script>
+
+</body>
+
+</html>

@@ -1,0 +1,112 @@
+<!DOCTYPE html>
+<html lang="id">
+<head>
+    <meta charset="UTF-8">
+    <!-- (Komentar) Meta tag viewport, penting untuk WebView -->
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Ubah Kata Sandi - BersihXpress</title>
+    
+    <link rel="stylesheet" href="../assets/css/style.css">
+    <link rel="stylesheet" href="../assets/css/webview.css">
+    <script src="../assets/js/webview.js"></script>
+    <script src="../assets/js/tailwind.js"></script>
+</head>
+<body class="bg-white">
+    <div id="loading-overlay" class="loading-container">
+        <img src="../assets/images/loading.gif" alt="Memuat..." class="loading-indicator">
+    </div>
+    <!-- (Komentar) Kontainer utama halaman -->
+    <div class="relative min-h-screen">
+
+        <!-- ====================================================== -->
+        <!-- (Komentar) 1. Bagian Header Biru (dengan Ilustrasi)    -->
+        <!-- ====================================================== -->
+        <div class="relative bg-blue-600 h-80 w-full rounded-b-[40px] flex flex-col items-center justify-center text-white p-6 overflow-hidden">
+            
+            <!-- (Komentar) Tombol Kembali (pojok kiri atas) -->
+            <!-- Saya tetap tambahkan tombol kembali untuk konsistensi alur -->
+            <a href="otp_sandi.html" class="absolute top-6 left-6 z-10 text-white p-2">
+                <svg data-feather="chevron-left" class="w-7 h-7"></svg>
+            </a>
+            
+            <!-- (Komentar) Elemen dekoratif lingkaran (opsional) -->
+            <div class="absolute -top-10 -left-10 w-32 h-32 bg-white/10 rounded-full z-0 opacity-50"></div>
+            <div class="absolute top-5 right-20 w-8 h-8 bg-white/10 rounded-full z-0 opacity-50"></div>
+            <div class="absolute bottom-5 -right-5 w-16 h-16 bg-white/10 rounded-full z-0 opacity-50"></div>
+
+            <!-- (Komentar) Placeholder untuk Ilustrasi (sama seperti Lupa Sandi) -->
+            <!-- Ganti 'src' ini dengan path ke file ilustrasi Anda -->
+            <div class="z-10">
+                <img src="../assets/images/illustrations/updatesandi.svg" alt="Ilustrasi Ubah Kata Sandi" class="w-auto h-48">
+            </div>
+            
+        </div>
+
+        <!-- ====================================================== -->
+        <!-- (Komentar) 2. Konten Form Ubah Sandi                  -->
+        <!-- ====================================================== -->
+        <div class="p-6 mt-8">
+
+            <!-- (Komentar) Judul Halaman -->
+            <h1 class="text-3xl font-bold text-gray-900">Ubah Kata Sandi</h1>
+            <p class="text-gray-500 mt-2 mb-6">Silahkan masuk kata sandi baru untuk masuk</p>
+
+            <!-- (Komentar) Form Ubah Sandi -->
+            <form id="reset-password-form" action="#" method="POST">
+                <div class="space-y-4">
+                    
+                    <!-- (Komentar) Input: Kata Sandi Baru -->
+                    <div>
+                        <div class="relative">
+                            <!-- (Komentar) Ikon Gembok -->
+                            <span class="absolute inset-y-0 left-0 pl-3 flex items-center pointer-events-none">
+                                <svg data-feather="lock" class="h-5 w-5 text-gray-400"></svg>
+                            </span>
+                            <input type="password" id="new_password" name="new_password"
+                                class="w-full pl-10 pr-3 py-3 border border-gray-300 rounded-lg focus:outline-none focus:ring-2 focus:ring-blue-500 focus:border-transparent"
+                                placeholder="Kata Sandi Baru" required>
+                        </div>
+                    </div>
+
+                    <!-- (Komentar) Input: Konfirmasi Kata Sandi Baru -->
+                    <div>
+                        <div class="relative">
+                            <!-- (Komentar) Ikon Gembok -->
+                            <span class="absolute inset-y-0 left-0 pl-3 flex items-center pointer-events-none">
+                                <svg data-feather="lock" class="h-5 w-5 text-gray-400"></svg>
+                            </span>
+                            <input type="password" id="confirm_password" name="confirm_password"
+                                class="w-full pl-10 pr-3 py-3 border border-gray-300 rounded-lg focus:outline-none focus:ring-2 focus:ring-blue-500 focus:border-transparent"
+                                placeholder="Konfirmasi Kata Sandi Baru" required>
+                        </div>
+                    </div>
+
+                    <!-- (Komentar) Tempat untuk pesan error (dikelola oleh JS) -->
+                    <p id="error-message" class="text-red-500 text-sm hidden"></p>
+
+                    <!-- (Komentar) Tombol Selanjutnya (Primary) -->
+                    <button type="submit"
+                        class="w-full bg-blue-600 text-white font-bold py-3 px-4 rounded-lg hover:bg-blue-700 focus:outline-none focus:ring-2 focus:ring-blue-500 focus:ring-opacity-50 transition duration-300 mt-4">
+                        Selanjutnya
+                    </button>
+
+                </div>
+            </form>
+
+            <!-- (Komentar) Link Pindah ke Halaman Masuk (konsisten) -->
+            <div class="text-center mt-8">
+                <span class="text-sm text-gray-500">sudah punya akun? </span>
+                <a href="masuk.html" class="text-sm font-semibold text-blue-600 hover:underline">
+                    Klik Disini
+                </a>
+            </div>
+
+        </div>
+    </div>
+
+    <script src="../assets/js/icons.js"></script>
+    <script src="../assets/js/main.js"></script>
+    <script src="../assets/js/auth-update-sandi.js"></script>
+
+</body>
+</html>

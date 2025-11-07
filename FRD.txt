@@ -1,0 +1,133 @@
+Pendahuluan
+
+1.1. Tujuan Dokumen
+
+Tujuan dari dokumen ini adalah untuk mendefinisikan kebutuhan fungsional dari aplikasi manajemen laundry yang akan dikembangkan untuk UMKM Wiens Laundry. Aplikasi ini bertujuan untuk menggantikan sistem pencatatan manual yang ada saat ini , mengatasi kesulitan dalam rekapitulasi keuangan,  mengurangi risiko kesalahan catat atau nota hilang, dan menyederhanakan proses bisnis secara keseluruhan.
+
+1.2. Audiens yang Dituju
+
+Dokumen ini ditujukan untuk tim pengembang (desainer UI/UX, developer), pemilik UMKM (Narasumber), dan Dosen Pembimbing Lapangan (DPL) sebagai landasan bersama mengenai fungsionalitas yang akan dibangun.
+
+1.3. Ruang Lingkup Proyek
+
+Sistem yang akan dikembangkan adalah aplikasi berbasis mobile atau web yang mencakup fungsionalitas berikut:
+
+Manajemen Transaksi (Penerimaan & Pembayaran).
+
+Manajemen Pelanggan (CRM).
+
+Manajemen Laporan (Keuangan & Pelanggan).
+
+Manajemen Kinerja Karyawan (untuk Payroll).
+
+Integrasi Notifikasi WhatsApp (sesuai permintaan DPL).
+
+Fitur absensi karyawan formal tidak menjadi prioritas utama , namun pelacakan kinerja untuk penggajian sangat penting.
+
+Peran Pengguna (User Roles)
+
+Sistem akan memiliki 2 (dua) peran utama dengan hak akses yang berbeda:
+
+Owner (Admin): Pemilik usaha (Narasumber). Memiliki akses penuh ke semua fitur, termasuk laporan keuangan, manajemen karyawan, dan pengaturan sistem.
+
+Karyawan (Kasir/Operator): Karyawan yang bertugas di bagian operasional dan kasir. Memiliki akses terbatas untuk membuat dan mengelola transaksi, serta memperbarui status cucian.
+
+Kebutuhan Fungsional
+
+F1: Manajemen Transaksi (Fitur Utama)
+
+Fitur ini adalah inti dari aplikasi, menggantikan pencatatan nota manual.
+
+F1.1: Sistem harus dapat mencatat pesanan (transaksi) baru saat pelanggan datang.
+
+F1.2: Sistem harus dapat membedakan dan mencatat jenis layanan yang dipilih:
+
+Kiloan (pakaian umum seperti baju, celana).
+
+Satuan (seperti bed cover, selimut, sprei, jas, dry clean).
+
+F1.3: Untuk layanan Kiloan, sistem harus dapat mencatat sub-layanan:
+
+Reguler (Harga Rp 7.000/kg).
+
+Ekspres (Harga Rp 10.000/kg).
+
+F1.4: Untuk layanan Satuan, sistem harus dapat mencatat harga per piece yang bervariasi:
+
+Contoh: Jas/Hanger (Rp 15.000/piece).
+
+Contoh: Selimut/Bed Cover (harga berdasarkan ukuran kecil, sedang, besar).
+
+F1.5: Sistem harus menyimpan data transaksi yang mencakup:
+
+Nama Pelanggan.
+
+Alamat Pelanggan.
+
+Nomor Handphone Pelanggan.
+
+Tanggal Masuk (tanggal naruh).
+
+Tanggal Selesai (tanggal beres).
+
+Detail Item (Berat kiloan atau jumlah satuan).
+
+Total Harga.
+
+F1.6: Sistem harus dapat menghasilkan (dan idealnya mencetak) nota/struk untuk pelanggan.
+
+F1.7: Sistem harus dapat melacak status proses cucian (misal: "Diterima", "Dicuci", "Selesai"). (Kebutuhan ini tersirat dari permintaan fitur Notifikasi WA ).
+
+F2: Manajemen Pembayaran
+
+F2.1: Sistem harus dapat mencatat metode pembayaran yang digunakan pelanggan.
+
+F2.2: Sistem harus mendukung pencatatan untuk metode: Cash, QRIS, dan Transfer.
+
+F2.3: Sistem harus dapat membedakan status transaksi "Lunas" atau "Belum Lunas". (Tersirat dari alur kerja laundry).
+
+F3: Manajemen Laporan (Kebutuhan Owner)
+
+Fitur ini untuk mengatasi kesulitan rekapitulasi manual.
+
+F3.1: Sistem harus dapat menghasilkan laporan Pemasukan.
+
+F3.2: Sistem harus dapat mencatat dan menghasilkan laporan Pengeluaran.
+
+F3.3: Sistem harus dapat menghasilkan laporan data Pelanggan (riwayat transaksi per pelanggan).
+
+F3.4: Semua laporan harus dapat difilter dan direkap berdasarkan periode (misal: harian, mingguan, bulanan).
+
+F4: Manajemen Karyawan & Payroll
+
+Menggantikan perhitungan manual gaji karyawan.
+
+F4.1: Sistem harus dapat melacak dan mencatat jumlah kiloan yang diselesaikan oleh setiap karyawan. (Absensi harian tidak diwajibkan ).
+
+F4.2: Sistem harus dapat mengakumulasi total kiloan per karyawan dalam satu bulan.
+
+F4.3: Sistem harus dapat menghitung total gaji bulanan karyawan berdasarkan total kiloan yang dikerjakan.
+
+F5: Manajemen Pelanggan (CRM)
+
+F5.1: Sistem harus memiliki database untuk menyimpan data pelanggan (Nama, Alamat, No. Handphone).
+
+F5.2: Data pelanggan ini harus dapat digunakan kembali saat membuat transaksi baru (untuk pelanggan tetap).
+
+F5.3: Data No. Handphone pelanggan akan digunakan untuk fitur F6 (Notifikasi WA).
+
+F6: Notifikasi & Pelacakan (Permintaan DPL)
+
+F6.1: Sistem harus dapat terintegrasi dengan layanan WhatsApp (WA) API.
+
+F6.2: Sistem harus mengirimkan notifikasi WA otomatis kepada pelanggan ketika:
+
+Pesanan baru dibuat (mencakup detail pesanan dan estimasi selesai).
+
+Status pesanan berubah (misal: "Sedang diproses").
+
+Pesanan telah selesai dan siap diambil.
+
+F6.3: Sistem harus mengirimkan notifikasi WA berisi total tagihan pembayaran.
+
+F6.4: (Opsional, berdasarkan kuesioner) Sistem dapat menyediakan platform (via WA atau Web) bagi pelanggan untuk melacak status pesanan mereka secara real-time.

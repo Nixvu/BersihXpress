@@ -1,0 +1,30 @@
+<!DOCTYPE html>
+<html lang="id">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>BersihXpress</title>
+
+    <meta http-equiv="refresh" content="2;url=auth/masuk.html">
+
+    <link rel="stylesheet" href="assets/css/style.css">
+    <link rel="stylesheet" href="assets/css/webview.css">
+    <script src="assets/js/webview.js"></script>
+    <script src="assets/js/tailwind.js"></script>    <script>
+        tailwind.config = {
+            theme: { extend: { fontFamily: { sans: ['Poppins', 'sans-serif'], }, } }
+        }
+    </script>
+</head>
+<body class="bg-blue-600 flex justify-center items-center h-screen">
+    <div class="text-center">
+        <img src="assets/images/illustrations/Logo.svg" alt="BersihXpress Logo" class="w-40 mx-auto animate-pulse">
+    </div>
+    <script>
+        setTimeout(() => {
+            // (Komentar) PERUBAHAN: Mengarahkan ke auth/masuk.html
+            window.location.href = 'auth/masuk.html';
+        }, 2100);
+    </script>
+</body>
+</html>
