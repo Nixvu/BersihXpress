@@ -51,16 +51,16 @@
             <p class="text-gray-500 mt-2 mb-6">Kami telah mengirim kode OTP ke email anda</p>
 
             <!-- (Komentar) Form OTP -->
-            <!-- (Komentar) Aksi form bisa di-handle oleh JavaScript -->
-            <form id="otp-form" action="#">
-                
+            <!-- (Komentar) Aksi form di-post ke endpoint verify; JS akan menggabungkan kotak OTP ke field 'otp' -->
+            <form id="otp-form" action="/auth/verify_otp.php" method="POST">
+                <input type="hidden" name="otp" id="otp">
                 <!-- (Komentar) Kontainer untuk 4 kotak input OTP -->
                 <!-- 'justify-between' memberi jarak yang sama antar kotak -->
                 <div class="flex justify-between space-x-2 sm:space-x-4 max-w-xs mx-auto mb-6">
-                    <input type="tel" maxlength="1" class="otp-input" data-index="0" required>
-                    <input type="tel" maxlength="1" class="otp-input" data-index="1" required>
-                    <input type="tel" maxlength="1" class="otp-input" data-index="2" required>
-                    <input type="tel" maxlength="1" class="otp-input" data-index="3" required>
+                    <input type="tel" inputmode="numeric" pattern="[0-9]*" maxlength="1" name="otp_0" id="otp-0" class="otp-input" data-index="0" required>
+                    <input type="tel" inputmode="numeric" pattern="[0-9]*" maxlength="1" name="otp_1" id="otp-1" class="otp-input" data-index="1" required>
+                    <input type="tel" inputmode="numeric" pattern="[0-9]*" maxlength="1" name="otp_2" id="otp-2" class="otp-input" data-index="2" required>
+                    <input type="tel" inputmode="numeric" pattern="[0-9]*" maxlength="1" name="otp_3" id="otp-3" class="otp-input" data-index="3" required>
                 </div>
 
                 <!-- (Komentar) Tombol Konfirmasi (Primary) -->

@@ -179,27 +179,27 @@
             </div>
             <!-- (Komentar) Form -->
             <div class="flex-grow overflow-y-auto p-6 no-scrollbar">
-                <form id="form-edit-profil" class="space-y-4">
+                <form id="form-edit-profil" class="space-y-4" method="POST" action="/owner/form-edit-profil.php">
                     <div class="flex flex-col items-center">
                         <img src="https://placehold.co/96x96/EFEFEF/333333?text=F" alt="Avatar" class="w-24 h-24 rounded-full mb-2" id="profil-avatar-form">
-                        <input type="file" id="profil_upload" class="hidden">
+                        <input type="file" id="profil_upload" name="profil_upload" class="hidden">
                         <label for="profil_upload" class="cursor-pointer text-sm font-medium text-blue-600 hover:text-blue-700">
                             Ganti Foto
                         </label>
                     </div>
                     <div><label for="profil_nama" class="text-sm font-medium text-gray-600">Nama Lengkap</label>
                         <div class="relative mt-1"><span class="absolute inset-y-0 left-0 pl-3 flex items-center pointer-events-none"><svg data-feather="user" class="h-5 w-5 text-gray-400"></svg></span>
-                            <input type="text" id="profil_nama" class="w-full pl-10 pr-3 py-3 border border-gray-300 rounded-lg" value="Febriana">
+                            <input type="text" id="profil_nama" name="profil_nama" class="w-full pl-10 pr-3 py-3 border border-gray-300 rounded-lg" value="Febriana">
                         </div>
                     </div>
                     <div><label for="profil_email" class="text-sm font-medium text-gray-600">Email</label>
                         <div class="relative mt-1"><span class="absolute inset-y-0 left-0 pl-3 flex items-center pointer-events-none"><svg data-feather="mail" class="h-5 w-5 text-gray-400"></svg></span>
-                            <input type="email" id="profil_email" class="w-full pl-10 pr-3 py-3 border border-gray-300 rounded-lg" value="febriana@bersihxpress.com">
+                            <input type="email" id="profil_email" name="profil_email" class="w-full pl-10 pr-3 py-3 border border-gray-300 rounded-lg" value="febriana@bersihxpress.com">
                         </div>
                     </div>
                     <div><label for="profil_no_hp" class="text-sm font-medium text-gray-600">No. Handphone</label>
                         <div class="relative mt-1"><span class="absolute inset-y-0 left-0 pl-3 flex items-center pointer-events-none"><svg data-feather="phone" class="h-5 w-5 text-gray-400"></svg></span>
-                            <input type="tel" id="profil_no_hp" class="w-full pl-10 pr-3 py-3 border border-gray-300 rounded-lg" placeholder="Masukkan No. Handphone">
+                            <input type="tel" id="profil_no_hp" name="profil_no_hp" class="w-full pl-10 pr-3 py-3 border border-gray-300 rounded-lg" placeholder="Masukkan No. Handphone">
                         </div>
                     </div>
                 </form>
@@ -226,20 +226,20 @@
                 </div>
             </div>
             <div class="flex-grow overflow-y-auto p-6 no-scrollbar">
-                <form id="form-ubah-password" class="space-y-4">
+                <form id="form-ubah-password" class="space-y-4" method="POST" action="/owner/form-ubah-password.php">
                     <div><label for="pass_lama" class="text-sm font-medium text-gray-600">Password Lama</label>
                         <div class="relative mt-1"><span class="absolute inset-y-0 left-0 pl-3 flex items-center pointer-events-none"><svg data-feather="lock" class="h-5 w-5 text-gray-400"></svg></span>
-                            <input type="password" id="pass_lama" class="w-full pl-10 pr-3 py-3 border border-gray-300 rounded-lg" placeholder="Masukkan password lama">
+                            <input type="password" id="pass_lama" name="pass_lama" class="w-full pl-10 pr-3 py-3 border border-gray-300 rounded-lg" placeholder="Masukkan password lama">
                         </div>
                     </div>
                     <div><label for="pass_baru" class="text-sm font-medium text-gray-600">Password Baru</p>
                         <div class="relative mt-1"><span class="absolute inset-y-0 left-0 pl-3 flex items-center pointer-events-none"><svg data-feather="key" class="h-5 w-5 text-gray-400"></svg></span>
-                            <input type="password" id="pass_baru" class="w-full pl-10 pr-3 py-3 border border-gray-300 rounded-lg" placeholder="Masukkan password baru">
+                            <input type="password" id="pass_baru" name="pass_baru" class="w-full pl-10 pr-3 py-3 border border-gray-300 rounded-lg" placeholder="Masukkan password baru">
                         </div>
                     </div>
                     <div><label for="pass_konfirmasi" class="text-sm font-medium text-gray-600">Konfirmasi Password Baru</p>
                         <div class="relative mt-1"><span class="absolute inset-y-0 left-0 pl-3 flex items-center pointer-events-none"><svg data-feather="key" class="h-5 w-5 text-gray-400"></svg></span>
-                            <input type="password" id="pass_konfirmasi" class="w-full pl-10 pr-3 py-3 border border-gray-300 rounded-lg" placeholder="Ulangi password baru">
+                            <input type="password" id="pass_konfirmasi" name="pass_konfirmasi" class="w-full pl-10 pr-3 py-3 border border-gray-300 rounded-lg" placeholder="Ulangi password baru">
                         </div>
                     </div>
                 </form>

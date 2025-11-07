@@ -52,16 +52,17 @@
                     <!-- (Komentar) Statistik Karyawan (Sama) -->
                     <div class="flex justify-between text-center border-b pb-4">
                         <div class="w-1/3">
-                            <span class="text-sm text-gray-500">Pendapatan</span>
                             <p class="text-lg font-bold text-gray-900">Rp 95.000</p>
+                            <span class="text-sm text-gray-500">Estimasi Komisi</span>
                         </div>
                         <div class="w-1/3 border-l">
-                            <span class="text-sm text-gray-500">Diproses</span>
                             <p class="text-lg font-bold text-gray-900">109</p>
+                            <span class="text-sm text-gray-500">Diproses</span>
                         </div>
                         <div class="w-1/3 border-l">
-                            <span class="text-sm text-gray-500">Selesai</span>
                             <p class="text-lg font-bold text-gray-900">125</p>
+                            <span class="text-sm text-gray-500">Selesai</span>
+
                         </div>
                     </div>
                     <div class="flex justify-around text-center pt-4">
@@ -108,90 +109,52 @@
             </section>
 
             <!-- (Komentar) PERUBAHAN BESAR: Mengganti "Daftar Transaksi" dengan "Tugas Saya" (TAB) -->
-            <section class="mt-6">
+<section class="mt-6">
                 <h2 class="text-lg font-semibold text-gray-800 mb-3">Tugas Saya</h2>
 
-                <!-- (Komentar) Navigasi Tab (Mirip Dashboard Owner) -->
                 <div class="flex space-x-2 bg-gray-200 p-1 rounded-lg">
                     <button class="tugas-tab-button aksi-tab-button-active w-1/2 py-2 rounded-md text-sm"
                         data-target="#tab-dikerjakan">
-                        Masih Dikerjakan
+                        Masih Dikerjakan (2)
                     </button>
                     <button class="tugas-tab-button w-1/2 py-2 rounded-md text-sm text-gray-600"
                         data-target="#tab-selesai-hari-ini">
-                        Selesai Hari Ini
+                        Selesai Hari Ini (1)
                     </button>
                 </div>
 
-                <!-- (Komentar) Panel Tab 1: Masih Dikerjakan -->
-                <div id="tab-dikerjakan" class="tugas-tab-panel mt-4 space-y-3">
-                    <!-- (Komentar) Item 1 (Contoh) -->
-                    <button class="w-full bg-white rounded-lg shadow p-4 text-left">
-                        <div class="flex justify-between items-start">
-                            <div class="flex items-center">
-                                <div class="p-2 bg-gray-100 rounded-lg mr-3"><svg data-feather="file-text"
-                                        class="w-5 h-5 text-gray-600"></svg></div>
-                                <div>
-                                    <p class="text-sm font-semibold text-gray-800">ID Nota #0913124</p>
-                                    <p class="text-lg font-bold text-gray-900">Siti</p>
-                                </div>
-                            </div>
+                <div id="tab-dikerjakan" class="tugas-tab-panel mt-4">
+                    <div class="bg-white rounded-lg shadow p-4 divide-y divide-gray-100">
+                        <button class="w-full flex justify-between items-center text-left py-3">
                             <div>
-                                <p class="text-lg font-bold text-gray-900 text-right">Rp 42.000</p>
-                                <span
-                                    class="text-xs font-semibold bg-blue-100 text-blue-700 rounded-full px-2 py-0.5">Diproses</span>
+                                <p class="text-sm font-semibold text-gray-900">Siti (#0913124)</p>
+                                <p class="text-xs text-gray-500">Masuk: 14:00</p>
                             </div>
-                        </div>
-                        <div class="border-t border-dashed mt-3 pt-3 text-sm text-gray-500">
-                            <p>Masuk : 21/11/2025 - 14:00</p>
-                        </div>
-                    </button>
-                    <!-- (Komentar) Item 2 (Contoh) -->
-                    <button class="w-full bg-white rounded-lg shadow p-4 text-left">
-                        <div class="flex justify-between items-start">
-                            <div class="flex items-center">
-                                <div class="p-2 bg-gray-100 rounded-lg mr-3"><svg data-feather="file-text"
-                                        class="w-5 h-5 text-gray-600"></svg></div>
-                                <div>
-                                    <p class="text-sm font-semibold text-gray-800">ID Nota #0913125</p>
-                                    <p class="text-lg font-bold text-gray-900">Ahmad</p>
-                                </div>
-                            </div>
+                            <span
+                                class="text-xs font-semibold bg-blue-100 text-blue-700 rounded-full px-2 py-0.5">Diproses</span>
+                        </button>
+                        <button class="w-full flex justify-between items-center text-left py-3">
                             <div>
-                                <p class="text-lg font-bold text-gray-900 text-right">Rp 21.000</p>
-                                <span
-                                    class="text-xs font-semibold bg-yellow-100 text-yellow-700 rounded-full px-2 py-0.5">Antrian</span>
+                                <p class="text-sm font-semibold text-gray-900">Ahmad (#0913125)</p>
+                                <p class="text-xs text-gray-500">Masuk: 17:00</p>
                             </div>
-                        </div>
-                        <div class="border-t border-dashed mt-3 pt-3 text-sm text-gray-500">
-                            <p>Masuk : 21/11/2025 - 17:00</p>
-                        </div>
-                    </button>
+                            <span
+                                class="text-xs font-semibold bg-yellow-100 text-yellow-700 rounded-full px-2 py-0.5">Antrian</span>
+                        </button>
+                    </div>
                 </div>
 
-                <!-- (Komentar) Panel Tab 2: Selesai Hari Ini -->
-                <div id="tab-selesai-hari-ini" class="tugas-tab-panel mt-4 space-y-3 hidden">
-                    <!-- (Komentar) Item 1 (Contoh) -->
-                    <button class="w-full bg-white rounded-lg shadow p-4 text-left">
-                        <div class="flex justify-between items-start">
-                            <div class="flex items-center">
-                                <div class="p-2 bg-gray-100 rounded-lg mr-3"><svg data-feather="file-text"
-                                        class="w-5 h-5 text-gray-600"></svg></div>
-                                <div>
-                                    <p class="text-sm font-semibold text-gray-800">ID Nota #0913123</p>
-                                    <p class="text-lg font-bold text-gray-900">Kosimudin</p>
-                                </div>
-                            </div>
+                <div id="tab-selesai-hari-ini" class="tugas-tab-panel mt-4 hidden">
+                    <div class="bg-white rounded-lg shadow p-4 divide-y divide-gray-100">
+                        <button class="w-full flex justify-between items-center text-left py-3">
                             <div>
-                                <p class="text-lg font-bold text-gray-900 text-right">Rp 140.000</p>
-                                <span
-                                    class="text-xs font-semibold bg-green-100 text-green-700 rounded-full px-2 py-0.5">Selesai</span>
+                                <p class="text-sm font-semibold text-gray-900">Kosimudin (#0913123)</p>
+                                <p class="text-xs text-gray-500">Selesai: 16:00</p>
                             </div>
-                        </div>
-                        <div class="border-t border-dashed mt-3 pt-3 text-sm text-gray-500">
-                            <p>Selesai : 21/11/2025 - 16:00</p>
-                        </div>
-                    </button>
+                            <span
+                                class="text-xs font-semibold bg-green-100 text-green-700 rounded-full px-2 py-0.5">Selesai</span>
+                        </button>
+                    </div>
                 </div>
             </section>
 
@@ -202,21 +165,29 @@
     <!-- ====================================================== -->
     <!-- (Komentar) 2. NAVIGASI BAWAH (3 TOMBOL)                -->
     <!-- ====================================================== -->
-    <nav
-        class="sticky bottom-0 left-0 right-0 bg-white border-t border-gray-200 grid grid-cols-3 gap-2 px-6 py-3 shadow-[0_-2px_5px_rgba(0,0,0,0.05)] flex-shrink-0 z-20">
-        <a href="transaksi.html" class="flex flex-col items-center text-gray-500 px-4 py-2">
-            <svg data-feather="file-text" class="w-6 h-6"></svg>
-            <span class="text-xs mt-1">Transaksi</span>
-        </a>
-        <a href="dashboard.html" class="flex flex-col items-center text-blue-600 bg-blue-100 rounded-lg px-4 py-2">
-            <svg data-feather="home" class="w-6 h-6"></svg>
-            <span class="text-xs mt-1 font-semibold">Beranda</span>
-        </a>
-        <a href="profile.html" class="flex flex-col items-center text-gray-500 px-4 py-2">
-            <svg data-feather="user" class="w-6 h-6"></svg>
-            <span class="text-xs mt-1">Akun</span>
-        </a>
-    </nav>
+<nav
+    class="sticky bottom-0 left-0 right-0 bg-white border-t border-gray-200 grid grid-cols-4 gap-2 px-4 py-3 shadow-[0_-2px_5px_rgba(0,0,0,0.05)] flex-shrink-0 z-20">
+    
+    <a href="dashboard.html" class="flex flex-col items-center text-blue-600 bg-blue-100 rounded-lg px-4 py-2">
+        <svg data-feather="home" class="w-6 h-6"></svg>
+        <span class="text-xs mt-1 font-semibold">Beranda</span>
+    </a>
+    
+    <a href="transaksi.html" class="flex flex-col items-center text-gray-500 px-4 py-2">
+        <svg data-feather="file-text" class="w-6 h-6"></svg>
+        <span class="text-xs mt-1">Transaksi</span>
+    </a>
+
+    <a href="laporan.html" class="flex flex-col items-center text-gray-500 px-4 py-2">
+        <svg data-feather="bar-chart-2" class="w-6 h-6"></svg>
+        <span class="text-xs mt-1">Laporan</span>
+    </a>
+    
+    <a href="profile.html" class="flex flex-col items-center text-gray-500 px-4 py-2">
+        <svg data-feather="user" class="w-6 h-6"></svg>
+        <span class="text-xs mt-1">Akun</span>
+    </a>
+</nav>
 
 
     <!-- ====================================================== -->
@@ -618,8 +589,7 @@
 
         <!-- (Komentar) MODAL 4: Modal Absensi (IMPROVEMENT) -->
         <div id="modal-absensi"
-            class="modal-popup hidden fixed bottom-0 left-0 right-0 bg-white rounded-t-[24px] shadow-2xl z-50 flex flex-col modal-popup-form">
-            <!-- Header -->
+            class="modal-popup hidden fixed bottom-0 left-0 right-0 bg-white rounded-t-[24px] shadow-2xl z-50 flex flex-col h-auto">
             <div class="flex-shrink-0">
                 <div class="w-full py-3">
                     <div class="w-12 h-1.5 bg-gray-300 rounded-full mx-auto"></div>
@@ -631,22 +601,7 @@
                 </div>
             </div>
 
-            <!-- Navigasi Tab (Presensi & Informasi) -->
-            <nav class="flex-shrink-0 border-b border-gray-200 px-6">
-                <div class="flex -mb-px">
-                    <button class="absen-tab-button tab-button tab-button-active flex-1 text-center py-3 border-b-2"
-                        data-target="#tab-presensi">
-                        Presensi
-                    </button>
-                    <button class="absen-tab-button tab-button flex-1 text-center py-3 border-b-2"
-                        data-target="#tab-informasi">
-                        Informasi
-                    </button>
-                </div>
-            </nav>
-
-            <!-- Konten Tab 1: Presensi -->
-            <div id="tab-presensi" class="absen-tab-panel flex-grow overflow-y-auto">
+            <div id="tab-presensi">
                 <div class="p-6 text-center">
                     <p class="text-gray-600 mb-2">Waktu server saat ini:</p>
                     <p id="live-clock" class="text-4xl font-bold text-gray-900">00:00:00</p>
@@ -665,64 +620,8 @@
                     </button>
                 </div>
             </div>
-
-            <!-- Konten Tab 2: Informasi Kehadiran -->
-            <div id="tab-informasi"
-                class="absen-tab-panel hidden flex-grow overflow-y-auto divide-y divide-gray-100 no-scrollbar">
-                <!-- (Komentar) PERUBAHAN: Filter & Statistik Baru -->
-                <div class="p-6 space-y-4">
-                    <!-- Filter -->
-                    <div class="flex space-x-2 bg-gray-100 p-1 rounded-lg">
-                        <button class="absen-filter-button aksi-tab-button-active w-1/2 py-2 rounded-md text-sm"
-                            data-filter="minggu">
-                            Minggu Ini
-                        </button>
-                        <button class="absen-filter-button w-1/2 py-2 rounded-md text-sm text-gray-600"
-                            data-filter="bulan">
-                            Bulan Ini
-                        </button>
-                    </div>
-                    <!-- Statistik (Lebih Relevan) -->
-                    <div class="grid grid-cols-2 gap-3 text-center">
-                        <div class="bg-gray-100 p-3 rounded-lg">
-                            <p class="text-xl font-bold text-gray-900">22</p>
-                            <span class="text-xs text-gray-500">Total Hadir</span>
-                        </div>
-                        <div class="bg-gray-100 p-3 rounded-lg">
-                            <p class="text-xl font-bold text-gray-900">125</p>
-                            <span class="text-xs text-gray-500">Total Selesai</span>
-                        </div>
-                    </div>
-                </div>
-
-                <h3 class="p-6 text-base font-semibold text-gray-800 pb-3">Aktivitas Terbaru</h3>
-
-                <!-- (Komentar) Aktivitas Absensi (Contoh) -->
-                <div class="w-full p-6 text-left text-sm">
-                    <div class="flex justify-between items-center">
-                        <p class="font-semibold text-gray-800">Absen Masuk</lebel>
-                            <span class="text-xs text-gray-400">01 Nov 2025</span>
-                    </div>
-                    <p class="text-gray-500">Waktu: 08:01 WIB (<span class="text-red-500 font-medium">Terlambat 1
-                            mnt</span>)</p>
-                </div>
-                <div class="w-full p-6 text-left text-sm">
-                    <div class="flex justify-between items-center">
-                        <p class="font-semibold text-gray-800">Absen Pulang</lebel>
-                            <span class="text-xs text-gray-400">31 Okt 2025</span>
-                    </div>
-                    <p class="text-gray-500">Waktu: 17:05 WIB</p>
-                </div>
-                <div class="w-full p-6 text-left text-sm">
-                    <div class="flex justify-between items-center">
-                        <p class="font-semibold text-gray-800">Absen Masuk</lebel>
-                            <span class="text-xs text-gray-400">31 Okt 2025</span>
-                    </div>
-                    <p class="text-gray-500">Waktu: 07:58 WIB (<span class="text-green-500 font-medium">Tepat
-                            Waktu</span>)</p>
-                </div>
+            
             </div>
-        </div>
 
         <!-- (Komentar) MODAL 5: Notifikasi Toast (Sama) -->
         <div id="toast-notifikasi"

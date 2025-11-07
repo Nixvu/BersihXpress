@@ -29,3 +29,36 @@ window.addEventListener('load', () => {
         console.warn('Feather Icons (icons.js) belum dimuat.');
     }
 });
+
+// Low-risk auto-fill: ensure forms have names/method/action for PHP POST when missing.
+// This runs at page load and is intentionally conservative: it only sets values when absent
+// and uses the element id as the field name to avoid changing JS that references ids.
+window.addEventListener('load', () => {
+    try {
+        const path = window.location.pathname || '';
+        document.querySelectorAll('form').forEach(form => {
+            // set method if not present
+            if (!form.getAttribute('method')) {
+                form.setAttribute('method', 'POST');
+            }
+
+            // set action placeholder if missing
+            if (!form.getAttribute('action')) {
+                let base = '/';
+                if (path.includes('/apps/owner/')) base = '/owner/';
+                else if (path.includes('/apps/karyawan/')) base = '/karyawan/';
+                // fallback to root + form id
+                const fid = form.id ? form.id : 'submit';
+                form.setAttribute('action', base + fid + '.php');
+            }
+
+            // add name attributes for inputs/selects/textareas that have an id but no name
+            form.querySelectorAll('input[id]:not([name]), select[id]:not([name]), textarea[id]:not([name])')
+                .forEach(el => {
+                    try { el.setAttribute('name', el.id); } catch (e) { /* ignore */ }
+                });
+        });
+    } catch (err) {
+        console.error('Auto-fill form-names failed:', err);
+    }
+});

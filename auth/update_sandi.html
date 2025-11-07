@@ -52,7 +52,7 @@
             <p class="text-gray-500 mt-2 mb-6">Silahkan masuk kata sandi baru untuk masuk</p>
 
             <!-- (Komentar) Form Ubah Sandi -->
-            <form id="reset-password-form" action="#" method="POST">
+            <form id="reset-password-form" action="/auth/reset_password.php" method="POST">
                 <div class="space-y-4">
                     
                     <!-- (Komentar) Input: Kata Sandi Baru -->
@@ -62,7 +62,7 @@
                             <span class="absolute inset-y-0 left-0 pl-3 flex items-center pointer-events-none">
                                 <svg data-feather="lock" class="h-5 w-5 text-gray-400"></svg>
                             </span>
-                            <input type="password" id="new_password" name="new_password"
+                            <input type="password" id="new_password" name="new_password" autocomplete="new-password"
                                 class="w-full pl-10 pr-3 py-3 border border-gray-300 rounded-lg focus:outline-none focus:ring-2 focus:ring-blue-500 focus:border-transparent"
                                 placeholder="Kata Sandi Baru" required>
                         </div>
@@ -75,7 +75,7 @@
                             <span class="absolute inset-y-0 left-0 pl-3 flex items-center pointer-events-none">
                                 <svg data-feather="lock" class="h-5 w-5 text-gray-400"></svg>
                             </span>
-                            <input type="password" id="confirm_password" name="confirm_password"
+                            <input type="password" id="confirm_password" name="confirm_password" autocomplete="new-password"
                                 class="w-full pl-10 pr-3 py-3 border border-gray-300 rounded-lg focus:outline-none focus:ring-2 focus:ring-blue-500 focus:border-transparent"
                                 placeholder="Konfirmasi Kata Sandi Baru" required>
                         </div>

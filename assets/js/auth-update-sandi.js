@@ -47,21 +47,23 @@ document.addEventListener("DOMContentLoaded", () => {
     }
 
     const form = document.getElementById('otp-form');
-    form.addEventListener('submit', (e) => {
-        e.preventDefault(); 
-        
-        let otpCode = '';
-        inputs.forEach(input => {
-            otpCode += input.value;
-        });
+    if (form) {
+        form.addEventListener('submit', (e) => {
+            e.preventDefault();
 
-        if (otpCode.length === inputs.length) {
-            console.log('Kode OTP yang dimasukkan:', otpCode);
-            // (Komentar) TODO: Tambahkan logika submit ke server
-            // (Komentar) Contoh: window.location.href = 'selesai_daftar.html';
-            // (Komentar) Contoh: window.location.href = 'update_sandi.html';
-        } else {
-            console.error('Kode OTP tidak lengkap');
-        }
-    });
+            let otpCode = '';
+            inputs.forEach(input => {
+                otpCode += input.value;
+            });
+
+            if (otpCode.length === inputs.length) {
+                console.log('Kode OTP yang dimasukkan:', otpCode);
+                const hidden = form.querySelector('#otp');
+                if (hidden) hidden.value = otpCode;
+                form.submit();
+            } else {
+                console.error('Kode OTP tidak lengkap');
+            }
+        });
+    }
 });
