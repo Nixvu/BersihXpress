@@ -1,8 +1,8 @@
 <?php
-define('DB_HOST', 'sql100.infinityfree.com');
-define('DB_USER', 'if0_40382042');
-define('DB_PASS', 'fnKb5IuHTPuK84');
-define('DB_NAME', 'if0_40382042_bersihxpress');
+define('DB_HOST', 'localhost');
+define('DB_USER', 'root');
+define('DB_PASS', '');
+define('DB_NAME', 'bersihxpress');
 
 try {
     $conn = new PDO("mysql:host=" . DB_HOST . ";dbname=" . DB_NAME, DB_USER, DB_PASS);
