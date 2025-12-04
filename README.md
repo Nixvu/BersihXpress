@@ -46,7 +46,7 @@ Ikuti langkah-langkah berikut untuk menginstal dan menjalankan proyek BersihXpre
     *(Ganti `https://github.com/your-username/BersihXpress.git` dengan URL repositori Anda)*
 
 2.  **Konfigurasi Database:**
-    *   Buat database baru di server MySQL/MariaDB Anda (misal: `bersihxpress_db`).
+    *   Buat database baru di server MySQL/MariaDB Anda (misal: `bersihxpress`).
     *   Impor skema database dari file `config/bersihxpress.sql` ke database yang baru Anda buat.
     *   Perbarui kredensial database di `config/database.php` (atau file konfigurasi database yang relevan) sesuai dengan pengaturan Anda.
 
