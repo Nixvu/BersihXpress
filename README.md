@@ -82,7 +82,3 @@ Ikuti langkah-langkah berikut untuk menginstal dan menjalankan proyek BersihXpre
 ## Kontribusi
 
 Jika Anda ingin berkontribusi pada proyek ini, silakan fork repositori, buat branch baru, lakukan perubahan Anda, dan ajukan pull request.
-
-## Lisensi
-
-[TBD - Tentukan lisensi Anda di sini, contoh: MIT License]
