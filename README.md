@@ -70,12 +70,14 @@ Ikuti langkah-langkah berikut untuk menginstal dan menjalankan proyek BersihXpre
 6.  **Akses Aplikasi:**
     *   Buka browser Anda dan navigasikan ke URL di mana aplikasi Anda di-host (misal: `http://localhost/BersihXpress`).
     *   Jika Anda mengakses dari browser, Anda akan diarahkan ke halaman login (`auth/masuk.php`).
-    *   Jika Anda mensimulasikan akses dari Android WebView (dengan memodifikasi User Agent atau membuat aplikasi WebView), Anda akan melalui alur onboarding terlebih dahulu.
+    *   Jika Anda mensimulasikan akses dari Android WebView (dengan memodifikasi User Agent atau membuat aplikasi WebView), Anda akan melalui alur onboarding terlebih dahulu.  
 
 ## Penggunaan
 
 *   **Untuk Owner**: Akses melalui browser web biasa dan masuk menggunakan kredensial owner.
+*   > Login Owner : [**Email :** owner@bersihxpress.com | **Password  :** owner123 ]
 *   **Untuk Karyawan**: Karyawan dapat masuk melalui browser web atau melalui Android WebView jika aplikasi mobile disediakan.
+*   > Login Karyawan : [**Email :** karyawan@bersihxpress.com | **Password  :** karyawan123 ]
 
 ## Kontribusi
 
